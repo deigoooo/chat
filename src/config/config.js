@@ -11,8 +11,6 @@ dotenv.config({
   path: ".env.development",
 });
 
-console.log(program.opts().p)
-
 export default {
   app: {
     persistence: process.env.PERSISTENCE,
