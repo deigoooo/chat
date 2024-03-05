@@ -35,7 +35,6 @@ const initializePassport = () => {
               req.flash("error", "The user must have a password")
             );
           }
-          const newCart = await cartService.create();
           const newUser = {
             first_name,
             last_name,
