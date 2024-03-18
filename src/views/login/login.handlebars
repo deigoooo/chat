@@ -1,0 +1,90 @@
+<style>
+  .button {
+    margin: 10px;
+    width: 7rem;
+    padding: 5px;
+    border: solid 1px;
+    transition: all 0.3s;
+  }
+  #login {
+    background-color: #161925;
+    border: 1px solid #F1D302;
+    color:#F1D302;
+    
+  }
+  #login:hover {
+    transition: all 0.3s;
+    background-color: #F1D302;
+    color :#161925;
+    
+  }
+  #registerOn{
+    background-color: #F1D302;
+    border: none;
+    color:#F1D302;
+  }
+  #registerOn a{
+    text-decoration: none;
+    color:#161925;
+  }
+  #registerOn:hover{
+    transition: all 0.3s;
+    border: 1px solid #F1D302;
+    background-color: #161925;
+    color:#F1D302;
+  }
+  #registerOn:hover a{
+    color:#F1D302;
+  }
+  #diferentLog{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #diferentLog a{
+    text-decoration: none;
+    color:#F1D302;
+    margin: 10px;
+  }
+
+
+</style>
+<div style="
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background-color:#161925;
+      ">
+  <form style="
+          width: 500px;
+          height: 500px;
+          border: 1px solid #F1D302;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          color: #F1D302;
+        " action="/session/login" method="post">
+    <h2>Iniciar sesion</h2>
+    <label for="email" style="display: block;"> Email</label>
+    <input type="email" name="email"
+      style="display: block; width: 240px;background-color:#161925;border: 1px solid #F1D302;" />
+    <label for="password" style="display: block;"> Contraseña</label>
+    <input type="password" name="password"
+      style="display: block; width: 240px;background-color:#161925;border: 1px solid #F1D302;" />
+    <div style="display: flex">
+      <button id="login" type="submit" class="button">
+        Ingresar
+      </button>
+      <button id="registerOn" type="button" class="button">
+        <a href="/session/register" style="">Registrarse</a>
+      </button>
+    </div>
+    <div id="diferentLog">
+      <a href="/session/github"><i class="fa-brands fa-google fa-2x"></i></a>
+      <a href="/session/google"><i class="fa-brands fa-github fa-2x"></i></a>
+    </div>
+      <a href="/session/forget-password" style="text-decoration: none;color: #F1D302;">Olvidé mi Contraseña</a>
+  </form>
+</div>

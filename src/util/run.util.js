@@ -11,7 +11,7 @@ const run = (socketServer,app)=>{
     //endpoint
     app.use('/views',viewRouter);
     app.use('/session',sessionRouter);
-    app.use('/', (req,res)=>res.redirect('/views/login'));
+    app.use('/', (req,res)=>res.render('main'));
 
     //configuro el socket
     socketServer.on("connection", async (socket) => {

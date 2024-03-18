@@ -5,7 +5,7 @@ import { UserDTO } from "../dto/user.dto.js";
 const router = Router();
 
 router.get("/register", async (req, res) => {
-  res.render("register");
+  res.render("login/register");
 });
 
 router.post(

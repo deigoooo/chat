@@ -1,0 +1,46 @@
+<style>
+    .container-fluid {
+        background-color: #161925;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        padding:0px;
+        margin: 0;
+    }
+
+    .navbar {
+        display: flex;
+        background-color: #F1D302;
+        width: 100%;
+        height: 2.5rem;
+        justify-content: flex-start;
+    }
+
+    #menu {
+        display: flex;
+        width: 100vw;
+        list-style-type: none;
+        justify-content: space-evenly;
+    }
+    #menu li a{
+        color: #161925;
+        text-decoration: none;
+        
+    }
+    .logged{
+        display: none;
+    }
+
+</style>
+
+<div class="container-fluid">
+    <div class="navbar">
+        <ul id="menu">
+            <li><a href="#">Inicio</a></li>
+            <li class="logged"><a href="#">Perfil</a></li>
+            <li class="logged"><a href="#">Chats</a></li>
+            <li><a href="/views/login">Login</a></li>
+            <li class="logged"><a href="#">Salir</a></li>
+        </ul>
+    </div>
+</div>
