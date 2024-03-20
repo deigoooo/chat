@@ -27,8 +27,14 @@ router.post(
   }),
   async (req, res) => {
     req.session.user = new UserDTO(req.user);
-    //   res.send(`estas logueado`)
-    res.status(200).redirect("/products");
+    console.log(req.session.user);
+    res.render("main", {
+      _id: req.session.user._id,
+      first_name: req.session.user.first_name,
+      last_name: req.session.user.last_name,
+      email: req.session.user.email,
+      age: req.session.user.age,
+    });
   }
 );
 
@@ -70,6 +76,15 @@ router.get("/failRegister", async (req, res) => {
 router.get("/failLogin", async (req, res) => {
   const newError = req.flash("error");
   res.send({ error: `${newError}` });
+});
+
+router.get("/logout", async (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).render("errors/base", { error: err });
+    } else res.status(200).redirect("/");
+  });
 });
 
 export default router;

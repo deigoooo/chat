@@ -1,10 +1,14 @@
+<script src="/js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+
 <style>
     .container-fluid {
         background-color: #161925;
         display: flex;
         width: 100%;
         height: 100vh;
-        padding:0px;
+        padding: 0px;
         margin: 0;
     }
 
@@ -22,25 +26,49 @@
         list-style-type: none;
         justify-content: space-evenly;
     }
-    #menu li a{
+
+    #menu li a {
         color: #161925;
         text-decoration: none;
-        
-    }
-    .logged{
-        display: none;
+
     }
 
+    .logged {
+        /*display: none;*/
+    }
+
+    #profile {
+        background-color: #F1D302;
+        list-style-type: none;
+        padding: 15px;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        box-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .logged:hover #profile {
+        display: block;
+        opacity: 1;
+    }
 </style>
 
 <div class="container-fluid">
     <div class="navbar">
         <ul id="menu">
             <li><a href="#">Inicio</a></li>
-            <li class="logged"><a href="#">Perfil</a></li>
+            <li class="logged"><a href="#">Perfil</a>
+                <ul id="profile">
+                    <li>User id:{{_id}}</li>
+                    <li>Nombre: {{first_name}} {{last_name}}</li>
+                    <li>Email: {{email}}</li>
+                    <li>Edad:{{age}}</li>
+                    <li><button>Modificar</button></li>
+                </ul>
+            </li>
             <li class="logged"><a href="#">Chats</a></li>
             <li><a href="/views/login">Login</a></li>
-            <li class="logged"><a href="#">Salir</a></li>
+            <li class="logged"><a href="/session/logout">Salir</a></li>
         </ul>
     </div>
 </div>

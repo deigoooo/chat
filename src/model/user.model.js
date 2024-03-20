@@ -22,12 +22,12 @@ const userSchema = new mongoose.Schema({
     },
     default: {},
   }, */
-/*   role: {
+   role: {
     type: String,
     enum: ["user", "admin", "premium"], //tipos de roles para usuarios
     default: "user", // Valor por defecto: 'usuario'
   },
-  documents: [{
+  /*documents: [{
     _id: false,
     name: String,
     reference: String
