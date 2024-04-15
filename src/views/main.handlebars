@@ -34,7 +34,7 @@
     }
 
     .logged {
-        /*display: none;*/
+        display: none;
     }
 
     #profile {
@@ -59,7 +59,7 @@
             <li><a href="#">Inicio</a></li>
             <li class="logged"><a href="#">Perfil</a>
                 <ul id="profile">
-                    <li>User id:{{_id}}</li>
+                    <li>User id: <a id="itsLog">{{_id}}</a></li>
                     <li>Nombre: {{first_name}} {{last_name}}</li>
                     <li>Email: {{email}}</li>
                     <li>Edad:{{age}}</li>
@@ -67,7 +67,7 @@
                 </ul>
             </li>
             <li class="logged"><a href="#">Chats</a></li>
-            <li><a href="/views/login">Login</a></li>
+            <li id="login"><a href="/views/login">Login</a></li>
             <li class="logged"><a href="/session/logout">Salir</a></li>
         </ul>
     </div>

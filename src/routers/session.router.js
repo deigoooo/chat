@@ -27,7 +27,6 @@ router.post(
   }),
   async (req, res) => {
     req.session.user = new UserDTO(req.user);
-    console.log(req.session.user);
     res.render("main", {
       _id: req.session.user._id,
       first_name: req.session.user.first_name,
