@@ -6,11 +6,13 @@
     .container-fluid {
         background-color: #161925;
         display: flex;
-        width: 100%;
+        width: 100vw;
         height: 100vh;
         padding: 0px;
         margin: 0;
+        overflow: hidden;
     }
+
 
     .navbar {
         display: flex;
@@ -53,7 +55,7 @@
     }
 </style>
 
-<div class="container-fluid">
+<div class="container-fluid d-flex">
     <div class="navbar">
         <ul id="menu">
             <li><a href="#">Inicio</a></li>
@@ -63,6 +65,7 @@
                     <li>Nombre: {{first_name}} {{last_name}}</li>
                     <li>Email: {{email}}</li>
                     <li>Edad:{{age}}</li>
+                    <li>Rol: {{role}}</li>
                     <li><button>Modificar</button></li>
                 </ul>
             </li>
@@ -70,5 +73,14 @@
             <li id="login"><a href="/views/login">Login</a></li>
             <li class="logged"><a href="/session/logout">Salir</a></li>
         </ul>
+    </div>
+    <div class="logged">
+        <div class="chat-messages" id="chatMessages">
+            <!-- Aquí se mostrarán los mensajes -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
     </div>
 </div>

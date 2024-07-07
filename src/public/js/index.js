@@ -1,4 +1,4 @@
-//const isDeslogued = document.querySelector('.logged');
+
 document.addEventListener('DOMContentLoaded', function() {
     const isDeslogued = document.querySelectorAll('.logged');
     const itsLog = document.getElementById('itsLog');

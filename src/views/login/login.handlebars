@@ -57,9 +57,18 @@
   }
 
   .custominput:focus {
-    background-color: #161925;
+    background-color: inherit;
     border-color: #F1D302;
     color: #F1D302;
+  }
+
+  .custominput {
+    display: block;
+    width: 240px;
+    background-color: #161925 !important;
+    border: 1px solid #F1D302;
+    color: #F1D302;
+    outline: none;
   }
 </style>
 <div style="
@@ -81,11 +90,9 @@
         " action="/session/login" method="post">
     <h2>Iniciar sesion</h2>
     <label for="email" style="display: block;"> Email</label>
-    <input type="email" name="email" class="custominput"
-      style="display: block; width: 240px;background-color:#161925;border: 1px solid #F1D302; color:#F1D302;" />
+    <input type="email" name="email" class="custominput" />
     <label for="password" style="display: block;"> Contraseña</label>
-    <input type="password" name="password" class="custominput"
-      style="display: block; width: 240px;background-color:#161925;border: 1px solid #F1D302;color:#F1D302;" />
+    <input type="password" name="password" class="custominput" />
     <div style="display: flex">
       <button id="login" type="submit" class="button">
         Ingresar
@@ -95,8 +102,8 @@
       </button>
     </div>
     <div id="diferentLog">
-      <a href="/session/github"><i class="fa-brands fa-google fa-2x"></i></a>
-      <a href="/session/google"><i class="fa-brands fa-github fa-2x"></i></a>
+      <a href="/session/google"><i class="fa-brands fa-google fa-2x"></i></a>
+      <a href="/session/github"><i class="fa-brands fa-github fa-2x"></i></a>
     </div>
     <a href="/session/forget-password" style="text-decoration: none;color: #F1D302;">Olvidé mi Contraseña</a>
   </form>

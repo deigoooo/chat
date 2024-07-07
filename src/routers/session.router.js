@@ -27,13 +27,7 @@ router.post(
   }),
   async (req, res) => {
     req.session.user = new UserDTO(req.user);
-    res.render("main", {
-      _id: req.session.user._id,
-      first_name: req.session.user.first_name,
-      last_name: req.session.user.last_name,
-      email: req.session.user.email,
-      age: req.session.user.age,
-    });
+    res.render("main", req.session.user);
   }
 );
 
@@ -54,8 +48,7 @@ router.get(
   passport.authenticate("github", { failureRedirect: "/session/failLogin" }),
   async (req, res) => {
     req.session.user = new UserDTO(req.user);
-    // res.send(`estas logueado`);
-    res.redirect("/products");
+    res.render("main", req.session.user);
   }
 );
 
@@ -64,7 +57,7 @@ router.get(
   passport.authenticate("google", { failureRedirect: "/session/failLogin" }),
   async (req, res) => {
     req.session.user = new UserDTO(req.user);
-    res.redirect("/products");
+    res.render("main", req.session.user);
   }
 );
 
